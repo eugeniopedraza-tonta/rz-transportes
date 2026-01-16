@@ -67,7 +67,7 @@ function App() {
               {/* Model Viewer */}
               <div className="w-full lg:w-1/2 mx-auto h-[50vh]">
                 <ModelViewer
-                  url="/src/assets/truck.glb"
+                  url="/truck.glb"
                   width={100 as number}
                   height={100 as number}      
                   modelYOffset={-0.1}       // Move model down slightly

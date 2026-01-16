@@ -3,9 +3,9 @@ import { gsap } from 'gsap';
 
 import './FlowingMenu.css';
 
-import trailer1 from '../assets/trailer-mx.png';
-import trailer2 from '../assets/trailer-espejo.png';
-import trailer3 from '../assets/trailer-4.png';
+import trailer1 from  '/trailer-mx.png';
+import trailer2 from '/trailer-espejo.png';
+import trailer3 from '/trailer-4.png';
 
 const ImagesItems = [
   { link: "#", text: "Cobertura", image: trailer1 },
