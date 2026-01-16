@@ -1,8 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import url('https://fonts.googleapis.com/css2?family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap');
 
 /* Zalando Sans SemiExpanded - Variable font */
-@import url('https://fonts.googleapis.com/css2?family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap');
 
 @custom-variant dark (&:is(.dark *));
 
@@ -133,5 +133,9 @@
   html {
     scrollbar-width: none;
     -ms-overflow-style: none;
+  }
+
+  .home-container {
+    @apply p-4 mt-30;
   }
 }
