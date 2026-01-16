@@ -62,19 +62,6 @@ const Footer = () => {
                 Soluciones de transporte totalmente personalizadas desde
                 Monterrey, Nuevo León hacia todo México.
               </p>
-              {/* Social Links */}
-              <div className="flex gap-3 pt-2">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.name}
-                    href={social.href}
-                    aria-label={social.name}
-                    className="w-10 h-10 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center text-white/70 hover:text-red-500 hover:bg-white/20 hover:border-red-500/30 transition-all duration-300 hover:scale-110"
-                  >
-                    {social.icon}
-                  </a>
-                ))}
-              </div>
             </div>
 
             {/* Navigation Links */}
@@ -94,7 +81,24 @@ const Footer = () => {
                 ))}
               </ul>
             </div>
-    
+            <div className="space-y-4">
+              <h3 className="text-white font-semibold text-lg">Contáctanos</h3>
+              <ul className="space-y-3">
+                            {/* Social Links */}
+                            <div className="flex gap-3 pt-2">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    aria-label={social.name}
+                    className="w-10 h-10 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center text-white/70 hover:text-red-500 hover:bg-white/20 hover:border-red-500/30 transition-all duration-300 hover:scale-110"
+                  >
+                    {social.icon}
+                  </a>
+                ))}
+              </div>
+              </ul>
+            </div>    
 
             {/* CTA Section */}
             <div className="space-y-4">

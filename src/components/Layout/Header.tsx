@@ -45,7 +45,7 @@ const Header = () => {
 
           <StarBorder
             as="button"
-            className="hover:scale-105 hover:shadow-lg hover:cursor-pointer"
+            className="items-center gap-2 bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 text-white font-bold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-red-500/25"
             color="#fff"
             speed="5s"
           >

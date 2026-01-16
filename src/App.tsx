@@ -31,7 +31,7 @@ function App() {
           <div className="container mx-auto">
             <div className="flex flex-col lg:flex-row items-center lg:gap-0 h-[50vh]">
               {/* Text Content */}
-              <div className="w-full lg:w-1/2 text-white text-start space-y-7">
+              <div className="w-full lg:w-1/2 text-white text-start space-y-7 p-4 lg:p-0">
                 <h1 className="text-4xl lg:text-5xl font-bold leading-tight">
                   Somos <span className="text-red-500">RZ Transportes</span>
                 </h1>
@@ -65,7 +65,7 @@ function App() {
               </div>
 
               {/* Model Viewer */}
-              <div className="w-full lg:w-1/2 border-2 border-blue-500 mx-auto h-[50vh]">
+              <div className="w-full lg:w-1/2 mx-auto h-[50vh]">
                 <ModelViewer
                   url="/src/assets/truck.glb"
                   width="100%"
