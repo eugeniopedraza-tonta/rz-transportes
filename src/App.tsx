@@ -68,8 +68,8 @@ function App() {
               <div className="w-full lg:w-1/2 mx-auto h-[50vh]">
                 <ModelViewer
                   url="/src/assets/truck.glb"
-                  width="100%"
-                  height="100%"     
+                  width={100 as number}
+                  height={100 as number}      
                   modelYOffset={-0.1}       // Move model down slightly
                   defaultRotationX={10}    // Adjust horizontal rotation
                   defaultRotationY={-25}     // Adjust vertical rotation
