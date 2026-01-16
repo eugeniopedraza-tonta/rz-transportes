@@ -3,14 +3,24 @@ import { gsap } from 'gsap';
 
 import './FlowingMenu.css';
 
+import trailer1 from '../assets/trailer-mx.png';
+import trailer2 from '../assets/trailer-espejo.png';
+import trailer3 from '../assets/trailer-4.png';
+
+const ImagesItems = [
+  { link: "#", text: "Cobertura", image: trailer1 },
+  { link: "#", text: "Infraestructura", image: trailer2 },
+  { link: "#", text: "Servicios", image: trailer3 }
+]
+
 function FlowingMenu({
-  items = [{"link": "https://picsum.photos/200/300", "text": "Cobertura", "image": "https://picsum.photos/200/300"}, {"link": "https://picsum.photos/200/300", "text": "Infraestructura", "image": "https://picsum.photos/200/300"}, {"link": "https://picsum.photos/200/300", "text": "Servicios", "image": "https://picsum.photos/200/300"}],
+  items = ImagesItems,
   speed = 15,
   textColor = '#fff',
   // red rgba like the contact button
   marqueeBgColor = 'rgba(255, 120, 50, 1)',
   marqueeTextColor = '#060010',
-  borderColor = 'rgba(255, 255, 255, 0.2)'
+  borderColor = 'rgba(255, 255, 255, 0.1)'
 }) {
   return (
     <div className="menu-wrap">

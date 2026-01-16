@@ -9,37 +9,37 @@ const MOBILE_BREAKPOINT = 768;
 
 const cardData = [
   {
-    color: 'rgba(0, 0, 0, 0.5)',
+    color: 'transparent',
     title: 'Analytics',
     description: 'Track user behavior',
     label: 'Insights'
   },
   {
-    color: 'rgba(0, 0, 0, 0.5)',
+    color: 'transparent',
     title: 'Dashboard',
     description: 'Centralized data view',
     label: 'Overview'
   },
   {
-    color: 'rgba(0, 0, 0, 0.5)',
+    color: 'transparent',
     title: 'Collaboration',
     description: 'Work together seamlessly',
     label: 'Teamwork'
   },
   {
-    color: 'rgba(0, 0, 0, 0.5)',
+    color: 'transparent',
     title: 'Automation',
     description: 'Streamline workflows',
     label: 'Efficiency'
   },
   {
-    color: 'rgba(0, 0, 0, 0.5)',
+    color: 'transparent',
     title: 'Integration',
     description: 'Connect favorite tools',
     label: 'Connectivity'
   },
   {
-    color: 'rgba(0, 0, 0, 0.5)',
+    color: 'transparent',
     title: 'Security',
     description: 'Enterprise-grade protection',
     label: 'Protection'
@@ -505,7 +505,7 @@ const MagicBento = ({
           const cardProps = {
             className: baseClassName,
             style: {
-              backgroundColor: card.color,
+              ...(card.color !== 'transparent' && { backgroundColor: card.color }),
               '--glow-color': glowColor
             }
           };

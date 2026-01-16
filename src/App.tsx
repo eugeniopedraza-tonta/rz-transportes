@@ -24,15 +24,14 @@ function App() {
       </div>
 
       {/* Your content goes here */}
-      <main className="relative z-10">
+      <main className="relative z-10 space-y-10">
         <Header />
-        
         {/* Hero Section */}
-        <section className="min-h-screen flex items-center pt-24">
+        <section className="flex items-center pt-30">
           <div className="container mx-auto">
-            <div className="flex flex-col lg:flex-row items-center lg:gap-0">
+            <div className="flex flex-col lg:flex-row items-center lg:gap-0 h-[50vh]">
               {/* Text Content */}
-              <div className="w-full lg:w-1/2 text-white text-start space-y-6">
+              <div className="w-full lg:w-1/2 text-white text-start space-y-7">
                 <h1 className="text-4xl lg:text-5xl font-bold leading-tight">
                   Somos <span className="text-red-500">RZ Transportes</span>
                 </h1>
@@ -64,21 +63,23 @@ function App() {
                   </div>
                 </div>
               </div>
-              
+
               {/* Model Viewer */}
-              <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
-                <div className="w-full max-w-[600px] aspect-square">
-                  <ModelViewer
-                    url="/src/assets/truck.glb"
-                    width="100%"
-                    height="100%"
-                  />
-                </div>
+              <div className="w-full lg:w-1/2 border-2 border-blue-500 mx-auto h-[50vh]">
+                <ModelViewer
+                  url="/src/assets/truck.glb"
+                  width="100%"
+                  height="100%"     
+                  modelYOffset={-0.1}       // Move model down slightly
+                  defaultRotationX={10}    // Adjust horizontal rotation
+                  defaultRotationY={-25}     // Adjust vertical rotation
+                  defaultZoom={0.5}         // Zoom out to see more of the model
+                  enableManualZoom={false}  // Disable mouse wheel zoom
+                />
               </div>
             </div>
           </div>
         </section>
-
         {/* Flowing Menu Section */}
         <section className="px-4 lg:px-26">
           <FlowingMenu />
