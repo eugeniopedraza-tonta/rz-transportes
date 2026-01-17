@@ -50,14 +50,14 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="mb-10">
-      <div className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-3xl">
-        <div className="container mx-auto px-8 py-12">
+    <footer className="mb-6 md:mb-10">
+      <div className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-2xl md:rounded-3xl">
+        <div className="container mx-auto px-4 md:px-8 py-8 md:py-12">
           {/* Main Footer Content */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
             {/* Brand Section */}
-            <div className="lg:col-span-1 space-y-4">
-              <img src={logo} alt="RZ Transportes" className="w-32 h-auto" />
+            <div className="sm:col-span-2 lg:col-span-1 space-y-4 text-center sm:text-left">
+              <img src={logo} alt="RZ Transportes" className="w-28 md:w-32 h-auto mx-auto sm:mx-0" />
               <p className="text-white/70 text-sm leading-relaxed">
                 Soluciones de transporte totalmente personalizadas desde
                 Monterrey, Nuevo León hacia todo México.
@@ -66,8 +66,8 @@ const Footer = () => {
 
             {/* Navigation Links */}
             <div className="space-y-4">
-              <h3 className="text-white font-semibold text-lg">Navegación</h3>
-              <ul className="space-y-3">
+              <h3 className="text-white font-semibold text-base md:text-lg">Navegación</h3>
+              <ul className="space-y-2 md:space-y-3">
                 {navigationLinks.map((link) => (
                   <li key={link.href}>
                     <a
@@ -82,10 +82,9 @@ const Footer = () => {
               </ul>
             </div>
             <div className="space-y-4">
-              <h3 className="text-white font-semibold text-lg">Contáctanos</h3>
-              <ul className="space-y-3">
-                            {/* Social Links */}
-                            <div className="flex gap-3 pt-2">
+              <h3 className="text-white font-semibold text-base md:text-lg">Contáctanos</h3>
+              {/* Social Links */}
+              <div className="flex flex-wrap gap-3 pt-2">
                 {socialLinks.map((social) => (
                   <a
                     key={social.name}
@@ -97,12 +96,11 @@ const Footer = () => {
                   </a>
                 ))}
               </div>
-              </ul>
             </div>    
 
             {/* CTA Section */}
-            <div className="space-y-4">
-              <h3 className="text-white font-semibold text-lg">
+            <div className="space-y-4 sm:col-span-2 lg:col-span-1">
+              <h3 className="text-white font-semibold text-base md:text-lg">
                 ¿Listo para comenzar?
               </h3>
               <p className="text-white/70 text-sm">
@@ -110,7 +108,7 @@ const Footer = () => {
               </p>
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 text-white font-medium rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-red-500/25"
+                className="inline-flex items-center gap-2 px-5 md:px-6 py-2.5 md:py-3 bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 text-white font-medium text-sm md:text-base rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-red-500/25"
               >
                 Solicitar Cotización
                 <svg
@@ -131,24 +129,24 @@ const Footer = () => {
           </div>
 
           {/* Divider */}
-          <div className="mt-10 pt-8 border-t border-white/10">
+          <div className="mt-8 md:mt-10 pt-6 md:pt-8 border-t border-white/10">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               {/* Copyright */}
-              <p className="text-white/50 text-sm text-center md:text-left">
+              <p className="text-white/50 text-xs md:text-sm text-center md:text-left">
                 © {currentYear} RZ Transportes. Todos los derechos reservados.
               </p>
 
               {/* Legal Links */}
-              <div className="flex items-center gap-6">
+              <div className="flex items-center gap-4 md:gap-6">
                 <a
                   href="#privacy"
-                  className="text-white/50 hover:text-white/80 text-sm transition-colors"
+                  className="text-white/50 hover:text-white/80 text-xs md:text-sm transition-colors"
                 >
                   Aviso de Privacidad
                 </a>
                 <a
                   href="#terms"
-                  className="text-white/50 hover:text-white/80 text-sm transition-colors"
+                  className="text-white/50 hover:text-white/80 text-xs md:text-sm transition-colors"
                 >
                   Términos y Condiciones
                 </a>
