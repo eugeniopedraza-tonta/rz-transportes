@@ -1,4 +1,4 @@
-import { cloneElement, useState } from "react";
+import { useState } from "react";
 
 const EmailComponent = () => {
   const [email, setEmail] = useState("");
