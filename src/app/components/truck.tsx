@@ -1,10 +1,9 @@
 "use client"
 
 import { Canvas, useFrame, useThree } from "@react-three/fiber"
-import { OrbitControls, Environment, useGLTF, Center } from "@react-three/drei"
+import { Environment, useGLTF, Center } from "@react-three/drei"
 import { Suspense, useMemo, useRef, useState } from "react"
 import * as THREE from "three"
-import Image from "next/image"
 
 type Phase = 0 | 1 | 2 // 0 = drive-in, 1 = close-up, 2 = idle
 
@@ -167,7 +166,7 @@ export default function Truck() {
   return (
     <div className="w-full h-[50vh] min-h-[420px] bg-black rounded-3xl overflow-hidden">
     <div className="absolute flex flex-col focus-in-expand top-30 ml-40">
-      <Image src="/rz-logo.jpeg" alt="RZ Transportes" width={200} height={200} className="text-focus-in"/>
+      <img src="/rz-logo.jpeg" alt="RZ Transportes" width={200} height={200} className="text-focus-in"/>
     </div>
       <Canvas camera={{ position: [10, 3, 12], fov: 55 }}>
         <ambientLight intensity={0.5} />
