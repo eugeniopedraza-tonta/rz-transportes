@@ -1,4 +1,4 @@
-import { ClockIcon, ShieldCheckIcon, MapPinIcon, TargetIcon, EyeIcon } from "lucide-react";
+import { ClockIcon, ShieldCheckIcon, MapPinIcon } from "lucide-react";
 import GradientText from "../GradientText";
 
 const Hero = () => {
@@ -25,26 +25,20 @@ const Hero = () => {
                     {/* Key Guarantees - from PDF */}
                     <div className="flex flex-col gap-4">
                         {/* Misión & Visión */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4">
-                            <div className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl p-4 md:p-5 hover:bg-white/10 transition-all duration-300 group hover:scale-105">
-                                <div className="flex items-center gap-3 mb-2">
-                                    <div className="p-2 rounded-lg bg-red-500/20 text-red-400 group-hover:bg-red-500/30 transition-colors">
-                                        <TargetIcon className="w-5 h-5" />
-                                    </div>
-                                    <p className="font-semibold text-white text-base">Misión</p>
-                                </div>
-                                <p className="text-sm text-white/70">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 divide-y divide-white/10 sm:divide-y-0 sm:divide-x lg:divide-x-0 lg:divide-y xl:divide-y-0 xl:divide-x border-y border-white/10">
+                            <div className="py-4 sm:py-5 sm:pr-6 lg:pr-0 lg:py-4 xl:py-5 xl:pr-6">
+                                <p className="text-[11px] font-semibold tracking-[0.25em] uppercase text-red-400 pb-2 mb-2 border-b border-red-500/30 inline-block">
+                                    Misión
+                                </p>
+                                <p className="text-sm text-white/70 leading-relaxed">
                                     Simplificar la logística de nuestros clientes mediante un transporte seguro, adaptado a sus necesidades específicas.
                                 </p>
                             </div>
-                            <div className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl p-4 md:p-5 hover:bg-white/10 transition-all duration-300 group hover:scale-105">
-                                <div className="flex items-center gap-3 mb-2">
-                                    <div className="p-2 rounded-lg bg-red-500/20 text-red-400 group-hover:bg-red-500/30 transition-colors">
-                                        <EyeIcon className="w-5 h-5" />
-                                    </div>
-                                    <p className="font-semibold text-white text-base">Visión</p>
-                                </div>
-                                <p className="text-sm text-white/70">
+                            <div className="py-4 sm:py-5 sm:pl-6 lg:pl-0 lg:py-4 xl:py-5 xl:pl-6">
+                                <p className="text-[11px] font-semibold tracking-[0.25em] uppercase text-red-400 pb-2 mb-2 border-b border-red-500/30 inline-block">
+                                    Visión
+                                </p>
+                                <p className="text-sm text-white/70 leading-relaxed">
                                     Consolidarnos como la primera opción de transporte en la región, construyendo relaciones a largo plazo a través de un servicio flexible, eficiente y de alto estándar operativo.
                                 </p>
                             </div>

@@ -6,6 +6,7 @@ import {
 import { GeoJSON } from "react-leaflet"
 import type { Feature, FeatureCollection } from "geojson"
 import type { Layer } from "leaflet"
+import LocalCoverageMap from "./LocalCoverageMap"
 
 // States where RZ Transportes has coverage (from PDF)
 const COVERAGE_STATES = [
@@ -74,27 +75,40 @@ const RouteMap = () => {
     };
 
     return (
-        <div className="backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 shadow-2xl h-[80dvh] w-full">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Nuestra Cobertura</h2>
-            <p className="text-white/60 text-sm md:text-base mb-4">
-                Cobertura nacional: Nuevo León, San Luis Potosí, Coahuila, Tamaulipas, Durango y Chihuahua.
-            </p>
-            <div className="w-full h-[calc(100%-5rem)] rounded-xl overflow-hidden">
-                <Map center={mapCenter} zoom={5} scrollWheelZoom={false} dragging={false} doubleClickZoom={false}>
-                    <MapTileLayer 
-                        url={darkTileUrl}
-                        attribution={darkAttribution}
-                    />
+        <div className="space-y-6">
+            <div>
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Nuestra Cobertura</h2>
+                <p className="text-white/60 text-sm md:text-base">
+                    Operamos a nivel nacional y ofrecemos servicio local en todo el estado de Nuevo León.
+                </p>
+            </div>
 
-                    {/* State boundaries from GeoJSON */}
-                    {geoData && (
-                        <GeoJSON 
-                            data={geoData} 
-                            style={getStateStyle}
-                            onEachFeature={onEachFeature}
-                        />
-                    )}
-                </Map>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <LocalCoverageMap />
+
+                <div className="backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 shadow-2xl h-[70dvh] md:h-[80dvh] w-full">
+                    <h3 className="text-xl md:text-2xl font-bold text-white mb-2">Cobertura Nacional</h3>
+                    <p className="text-white/60 text-sm md:text-base mb-4">
+                        Nuevo León, San Luis Potosí, Coahuila, Tamaulipas, Durango y Chihuahua.
+                    </p>
+                    <div className="w-full h-[calc(100%-5.5rem)] rounded-xl overflow-hidden">
+                        <Map center={mapCenter} zoom={5} scrollWheelZoom={false} dragging={false} doubleClickZoom={false}>
+                            <MapTileLayer
+                                url={darkTileUrl}
+                                attribution={darkAttribution}
+                            />
+
+                            {/* State boundaries from GeoJSON */}
+                            {geoData && (
+                                <GeoJSON
+                                    data={geoData}
+                                    style={getStateStyle}
+                                    onEachFeature={onEachFeature}
+                                />
+                            )}
+                        </Map>
+                    </div>
+                </div>
             </div>
 
             <style>{`

@@ -9,6 +9,7 @@ import CarrouselModal from "./components/Carrousel/CarrouselModal";
 import EmailComponent from "./components/EmailForm/EmailComponent";
 import RouteMap from "./components/RouteMap/RouteMap";
 import WhatsAppButton from "./components/Layout/WhatsAppButton";
+import Stats from "./components/Stats/Stats";
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
         <Header />
         <section className="px-4 md:px-8 lg:px-26 mt-30 scroll-mt-32" id="services">
           <Hero />
+        </section>
+        <section className="px-4 md:px-8 lg:px-26">
+          <Stats />
         </section>
         <section className="px-4 md:px-8 lg:px-26 scroll-mt-32" id="coverage">
           <RouteMap />
