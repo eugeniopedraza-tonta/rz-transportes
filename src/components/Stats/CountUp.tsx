@@ -1,17 +1,16 @@
-import { useEffect, useRef } from "react";
-import { motion, animate, useInView, useMotionValue, useTransform, useReducedMotion } from "motion/react";
+import { useEffect } from "react";
+import { motion, animate, useMotionValue, useTransform, useReducedMotion } from "motion/react";
 
 interface CountUpProps {
     target: number;
+    start: boolean;
     decimals?: number;
     prefix?: string;
     suffix?: string;
     duration?: number;
 }
 
-const CountUp = ({ target, decimals = 0, prefix = "", suffix = "", duration = 1.8 }: CountUpProps) => {
-    const ref = useRef<HTMLSpanElement>(null);
-    const isInView = useInView(ref, { once: true, margin: "-80px" });
+const CountUp = ({ target, start, decimals = 0, prefix = "", suffix = "", duration = 1.8 }: CountUpProps) => {
     const shouldReduceMotion = useReducedMotion();
     const count = useMotionValue(0);
     const formatted = useTransform(count, (value) =>
@@ -24,7 +23,7 @@ const CountUp = ({ target, decimals = 0, prefix = "", suffix = "", duration = 1.
     );
 
     useEffect(() => {
-        if (!isInView) return;
+        if (!start) return;
 
         if (shouldReduceMotion) {
             count.set(target);
@@ -35,10 +34,10 @@ const CountUp = ({ target, decimals = 0, prefix = "", suffix = "", duration = 1.
             duration,
             ease: [0.16, 1, 0.3, 1],
         });
-        return controls.stop;
-    }, [isInView, target, duration, shouldReduceMotion, count]);
+        return () => controls.stop();
+    }, [start, target, duration, shouldReduceMotion, count]);
 
-    return <motion.span ref={ref}>{formatted}</motion.span>;
+    return <motion.span>{formatted}</motion.span>;
 };
 
 export default CountUp;

@@ -1,41 +1,6 @@
+import { useState } from "react";
 import { motion } from "motion/react";
 import CountUp from "./CountUp";
-
-const heroStats = [
-    {
-        value: <CountUp target={98.7} decimals={1} suffix="%" />,
-        label: "Entregas a tiempo",
-        description: "Nuestro indicador de confiabilidad: la gran mayoría de los envíos llegan dentro del plazo acordado.",
-    },
-    {
-        value: <CountUp target={1000} prefix="+" />,
-        label: "Servicios concretados",
-        description: "Operaciones completadas con éxito para clientes de distintas industrias.",
-    },
-];
-
-const secondaryStats = [
-    {
-        value: "24/7",
-        label: "Disponibilidad, 365 días al año",
-        description: "Coordinación y monitoreo activos todos los días del año, sin excepción.",
-    },
-    {
-        value: <CountUp target={240000} prefix="+" suffix=" km" />,
-        label: "Recorridos al año",
-        description: "Capacidad operativa respaldada por una flota en movimiento constante.",
-    },
-    {
-        value: <CountUp target={4.9} decimals={1} suffix="/5" />,
-        label: "Satisfacción del cliente",
-        description: "Calificación promedio en más de 500 servicios realizados.",
-    },
-    {
-        value: <CountUp target={6} />,
-        label: "Estados con cobertura activa",
-        description: "Infraestructura y presencia operativa en el noreste y centro-norte del país.",
-    },
-];
 
 const containerVariants = {
     hidden: {},
@@ -54,6 +19,45 @@ const itemVariants = {
 };
 
 const Stats = () => {
+    const [heroInView, setHeroInView] = useState(false);
+    const [secondaryInView, setSecondaryInView] = useState(false);
+
+    const heroStats = [
+        {
+            value: <CountUp target={98.7} decimals={1} suffix="%" start={heroInView} />,
+            label: "Entregas a tiempo",
+            description: "Nuestro indicador de confiabilidad: la gran mayoría de los envíos llegan dentro del plazo acordado.",
+        },
+        {
+            value: <CountUp target={1000} prefix="+" start={heroInView} />,
+            label: "Servicios concretados",
+            description: "Operaciones completadas con éxito para clientes de distintas industrias.",
+        },
+    ];
+
+    const secondaryStats = [
+        {
+            value: "24/7",
+            label: "Disponibilidad, 365 días al año",
+            description: "Coordinación y monitoreo activos todos los días del año, sin excepción.",
+        },
+        {
+            value: <CountUp target={240000} prefix="+" suffix=" km" start={secondaryInView} />,
+            label: "Recorridos al año",
+            description: "Capacidad operativa respaldada por una flota en movimiento constante.",
+        },
+        {
+            value: <CountUp target={4.9} decimals={1} suffix="/5" start={secondaryInView} />,
+            label: "Satisfacción del cliente",
+            description: "Calificación promedio en más de 500 servicios realizados.",
+        },
+        {
+            value: <CountUp target={6} start={secondaryInView} />,
+            label: "Estados con cobertura activa",
+            description: "Infraestructura y presencia operativa en el noreste y centro-norte del país.",
+        },
+    ];
+
     return (
         <div className="container mx-auto md:px-0">
             <motion.div
@@ -79,6 +83,7 @@ const Stats = () => {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.3 }}
+                    onViewportEnter={() => setHeroInView(true)}
                 >
                     {heroStats.map((stat) => (
                         <motion.div
@@ -106,6 +111,7 @@ const Stats = () => {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.3 }}
+                    onViewportEnter={() => setSecondaryInView(true)}
                 >
                     {secondaryStats.map((stat) => (
                         <motion.div
