@@ -64,8 +64,7 @@ const Footer = () => {
             <div className="sm:col-span-2 lg:col-span-1 space-y-4 text-center sm:text-left">
               <img src={logo} alt="RZ Transportes" className="w-28 md:w-32 h-auto mx-auto sm:mx-0" />
               <p className="text-white/70 text-sm leading-relaxed">
-                Soluciones de transporte totalmente personalizadas desde
-                Monterrey, Nuevo León hacia todo México.
+                Logistica Integral & Transporte Industrial
               </p>
             </div>
 
