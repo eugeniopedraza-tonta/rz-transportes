@@ -46,10 +46,11 @@ const EmailComponent = () => {
         body: JSON.stringify({ subject, email, phone, message }),
       });
 
-      const data = await response.json();
+      const isJson = response.headers.get('content-type')?.includes('application/json');
+      const data = isJson ? await response.json() : null;
 
       if (!response.ok) {
-        throw new Error(data.error || 'Error al enviar el mensaje');
+        throw new Error(data?.error || 'No se pudo enviar el mensaje. Intenta de nuevo más tarde.');
       }
 
       setSuccess("¡Mensaje enviado correctamente!");
@@ -156,7 +157,7 @@ const EmailComponent = () => {
           <button
             onClick={handleSubmit}
             disabled={loading}
-            className="w-full py-3.5 mt-2 bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 text-white font-semibold rounded-xl shadow-lg shadow-red-500/25 hover:shadow-red-500/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            className="btn-gradient-animated w-full py-3.5 mt-2 text-white font-semibold rounded-xl shadow-lg shadow-red-500/25 hover:shadow-red-500/40 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           >
             {loading ? (
               <>

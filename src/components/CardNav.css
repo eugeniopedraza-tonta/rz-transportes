@@ -7,7 +7,7 @@
 
 .card-nav {
   display: block;
-  height: 60px;
+  height: 96px;
   padding: 0;
   background-color: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(12px);
@@ -25,7 +25,7 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 60px;
+  height: 96px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -76,26 +76,29 @@
 }
 
 .logo {
-  height: 32px;
+  height: 70px;
+  width: auto;
 }
 
 .card-nav-cta-button {
-  background-color: #ef4444;
+  background-image: linear-gradient(90deg, #dc2626, #f97316, #ef4444, #dc2626);
+  background-size: 300% 100%;
+  animation: btn-gradient-move 4s ease infinite;
   color: white;
   border: none;
   border-radius: 0.5rem;
   padding: 0 1.25rem;
-  height: calc(100% - 8px);
+  height: calc(100% - 35px);
   font-weight: 600;
   font-size: 0.875rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   align-items: center;
+  margin-right: 10px;
   display: flex;
 }
 
 .card-nav-cta-button:hover {
-  background-color: #dc2626;
   transform: scale(1.02);
 }
 
@@ -103,7 +106,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 60px;
+  top: 100px;
   padding: 0.75rem 1rem;
   display: flex;
   flex-direction: column;

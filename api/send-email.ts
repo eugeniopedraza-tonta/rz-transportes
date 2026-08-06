@@ -27,8 +27,8 @@ export default async function handler(
     }
 
     const { data, error } = await resend.emails.send({
-      from: 'RZ Transportes <info@rztransportes.com>', // Change to your verified domain
-      to: ['info@rztransportes.com'],
+      from: 'RZ Transportes <contacto@rztransportes.com>', // Change to your verified domain
+      to: ['contacto@rztransportes.com'],
       replyTo: email,
       subject: `Nuevo mensaje de contacto: ${subject}`,
       html: `

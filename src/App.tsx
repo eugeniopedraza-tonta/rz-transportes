@@ -2,11 +2,13 @@ import "./App.css";
 import Beams from "./components/Body/Background/Beams";
 import Header from "./components/Layout/Header";
 import Hero from "./components/Hero/Hero";
-import MagicBento from "./components/Body/BentoBox/MagicBento";
+import TechProtection from "./components/Protection/TechProtection";
+import WhyChooseUs from "./components/WhyChooseUs/WhyChooseUs";
 import Footer from "./components/Layout/Footer";
 import CarrouselModal from "./components/Carrousel/CarrouselModal";
 import EmailComponent from "./components/EmailForm/EmailComponent";
 import RouteMap from "./components/RouteMap/RouteMap";
+import WhatsAppButton from "./components/Layout/WhatsAppButton";
 
 function App() {
   return (
@@ -26,28 +28,32 @@ function App() {
       </div>
 
       {/* Your content goes here */}
-      <main className="relative z-10 space-y-6 md:space-y-10 mt-6 md:mt-10">
+      <main className="relative z-10 space-y-16 md:space-y-24 mt-6 md:mt-10">
         <Header />
-        <section className="px-4 md:px-8 lg:px-26 mt-30" id="services">
+        <section className="px-4 md:px-8 lg:px-26 mt-30 scroll-mt-32" id="services">
           <Hero />
         </section>
-        <section className="px-4 md:px-8 lg:px-26" id="coverage">
+        <section className="px-4 md:px-8 lg:px-26 scroll-mt-32" id="coverage">
           <RouteMap />
         </section>
-        {/* Flowing Menu Section */}
-        <section className="h-[50dvh]" id="fleet">
+        <section className="px-4 md:px-8 lg:px-26 scroll-mt-32" id="fleet">
           <CarrouselModal />
         </section>
-        <section className="md:px-8 lg:px-22" id="about">
-          <MagicBento />
+        <section className="px-4 md:px-8 lg:px-26 scroll-mt-32" id="protection">
+          <TechProtection />
         </section>
-        <section className="px-4 md:px-8 lg:px-26 flex flex-row items-center justify-between w-full gap-8" id="contact">
+        <section className="px-4 md:px-8 lg:px-26 scroll-mt-32" id="about">
+          <WhyChooseUs />
+        </section>
+        <section className="px-4 md:px-8 lg:px-26 flex flex-row items-center justify-between w-full gap-8 scroll-mt-32" id="contact">
           <EmailComponent />
         </section>
         <section className="px-4 md:px-8 lg:px-26">
           <Footer />
         </section>
       </main>
+
+      <WhatsAppButton />
     </>
   );
 }

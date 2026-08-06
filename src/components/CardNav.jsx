@@ -33,7 +33,7 @@ const CardNav = ({
 
       contentEl.offsetHeight;
 
-      const topBar = 60;
+      const topBar = 96;
       const padding = 24;
       const contentHeight = contentEl.scrollHeight;
 
@@ -51,7 +51,7 @@ const CardNav = ({
     const navEl = navRef.current;
     if (!navEl) return null;
 
-    gsap.set(navEl, { height: 60, overflow: 'hidden' });
+    gsap.set(navEl, { height: 96, overflow: 'hidden' });
     gsap.set(linksRef.current, { y: 20, opacity: 0 });
 
     const tl = gsap.timeline({ paused: true });
@@ -157,7 +157,7 @@ const CardNav = ({
 
   return (
     <div className={`card-nav-container ${className}`}>
-      <nav ref={navRef} className={`card-nav ${isExpanded ? 'open' : ''}`}>
+      <nav ref={navRef} className={`card-nav ${isExpanded ? 'open' : ''}`} onMouseLeave={closeMenu}>
         <div className="card-nav-top">
           <div
             className={`hamburger-menu ${isHamburgerOpen ? 'open' : ''}`}
@@ -171,7 +171,7 @@ const CardNav = ({
           </div>
 
           <div className="logo-container">
-            <img src={logo} alt={logoAlt} className="logo" />
+            <img src={logo} alt={logoAlt} className="logo"/>
           </div>
 
           <button

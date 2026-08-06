@@ -10,7 +10,8 @@ import type { Layer } from "leaflet"
 // States where RZ Transportes has coverage (from PDF)
 const COVERAGE_STATES = [
     "Nuevo León",
-    "Coahuila de Zaragoza", 
+    "Coahuila",
+    "Tamaulipas",
     "Chihuahua",
     "Durango",
     "San Luis Potosí"
@@ -19,7 +20,8 @@ const COVERAGE_STATES = [
 // Display names for states (shorter/cleaner names)
 const STATE_DISPLAY_NAMES: Record<string, string> = {
     "Nuevo León": "Nuevo León",
-    "Coahuila de Zaragoza": "Coahuila",
+    "Coahuila": "Coahuila",
+    "Tamaulipas": "Tamaulipas",
     "Chihuahua": "Chihuahua",
     "Durango": "Durango",
     "San Luis Potosí": "San Luis Potosí"
@@ -75,7 +77,7 @@ const RouteMap = () => {
         <div className="backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 shadow-2xl h-[80dvh] w-full">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Nuestra Cobertura</h2>
             <p className="text-white/60 text-sm md:text-base mb-4">
-                Cobertura nacional: Nuevo León, San Luis Potosí, Coahuila, Durango y Chihuahua.
+                Cobertura nacional: Nuevo León, San Luis Potosí, Coahuila, Tamaulipas, Durango y Chihuahua.
             </p>
             <div className="w-full h-[calc(100%-5rem)] rounded-xl overflow-hidden">
                 <Map center={mapCenter} zoom={5} scrollWheelZoom={false} dragging={false} doubleClickZoom={false}>

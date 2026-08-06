@@ -9,7 +9,8 @@ const Header = () => {
     { label: "Servicios", href: "#services" },
     { label: "Cobertura", href: "#coverage" },
     { label: "Flota", href: "#fleet" },
-    { label: "Nosotros", href: "#about" },
+    { label: "Protección", href: "#protection" },
+    { label: "¿Por qué elegirnos?", href: "#about" },
     { label: "Contacto", href: "#contact" },
   ];
 

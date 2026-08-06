@@ -1,64 +1,102 @@
-import { ClockIcon, ShieldCheckIcon, MapPinIcon } from "lucide-react";
+import { ClockIcon, ShieldCheckIcon, MapPinIcon, TargetIcon, EyeIcon } from "lucide-react";
 import GradientText from "../GradientText";
 
 const Hero = () => {
     return (
-        <div className="container mx-auto md:px-0">
-            <div className="flex flex-col gap-8">
+        <div className="container mx-auto md:px-0 min-h-[85vh] lg:min-h-[90vh] flex items-center py-12 lg:py-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-stretch w-full">
                 {/* Text Content */}
-                <div className="w-full lg:w-2/3 text-white text-start space-y-4 md:space-y-6">
-                    <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight flex items-center gap-2">
-                        <span>
-                        Somos <GradientText colors={["#ef4444", "#ffffff", "#f97316", "#ffffff", "#ef4444"]} animationSpeed={4} direction="horizontal" pauseOnHover={true} yoyo={true}>RZ Transportes</GradientText></span>
-                    </h1>
-                    <div className="text-base md:text-lg text-white/90 leading-relaxed">
-                        RZ Transportes fue fundada en{" "}
-                        <GradientText colors={["#ef4444", "#ffffff", "#f97316", "#ffffff", "#ef4444"]} animationSpeed={4} direction="horizontal" pauseOnHover={true} yoyo={true}>Monterrey, Nuevo León</GradientText>
-                        , con la visión de ofrecer servicios de transporte y distribución
-                        totalmente personalizados.
+                <div className="flex flex-col justify-between gap-8 h-full">
+                    <div className="text-white text-start space-y-4 md:space-y-6">
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight flex items-center gap-2">
+                            <span>
+                                Somos <GradientText colors={["#ef4444", "#ffffff", "#f97316", "#ffffff", "#ef4444"]} animationSpeed={4} direction="horizontal" pauseOnHover={true} yoyo={true}>RZ Transportes</GradientText></span>
+                        </h1>
+                        <div className="text-base md:text-lg text-white/90 leading-relaxed">
+                            Fundada en el núcleo industrial de{" "}
+                            <GradientText colors={["#ef4444", "#ffffff", "#f97316", "#ffffff", "#ef4444"]} animationSpeed={4} direction="horizontal" pauseOnHover={true} yoyo={true}>Monterrey, Nuevo León</GradientText>
+                            , impulsamos el crecimiento de nuestros clientes a través de un servicio de transporte y distribución altamente personalizado y eficiente.
+                        </div>
+                        <p className="text-sm md:text-base text-white/80 leading-relaxed">
+                            Nuestra sólida trayectoria en el manejo de cargas convencionales, especiales y de proyecto nos permite responder con flexibilidad, rigor operativo y excelencia ante los desafios clave de cada industria y cliente.
+                        </p>
                     </div>
-                    <p className="text-sm md:text-base text-white/80 leading-relaxed">
-                        Contamos con experiencia en la gestión de cargas convencionales,
-                        especiales y de proyecto, adaptándonos a las necesidades
-                        específicas de cada cliente y sector.
-                    </p>
+
+                    {/* Key Guarantees - from PDF */}
+                    <div className="flex flex-col gap-4">
+                        {/* Misión & Visión */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4">
+                            <div className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl p-4 md:p-5 hover:bg-white/10 transition-all duration-300 group hover:scale-105">
+                                <div className="flex items-center gap-3 mb-2">
+                                    <div className="p-2 rounded-lg bg-red-500/20 text-red-400 group-hover:bg-red-500/30 transition-colors">
+                                        <TargetIcon className="w-5 h-5" />
+                                    </div>
+                                    <p className="font-semibold text-white text-base">Misión</p>
+                                </div>
+                                <p className="text-sm text-white/70">
+                                    Simplificar la logística de nuestros clientes mediante un transporte seguro, adaptado a sus necesidades específicas.
+                                </p>
+                            </div>
+                            <div className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl p-4 md:p-5 hover:bg-white/10 transition-all duration-300 group hover:scale-105">
+                                <div className="flex items-center gap-3 mb-2">
+                                    <div className="p-2 rounded-lg bg-red-500/20 text-red-400 group-hover:bg-red-500/30 transition-colors">
+                                        <EyeIcon className="w-5 h-5" />
+                                    </div>
+                                    <p className="font-semibold text-white text-base">Visión</p>
+                                </div>
+                                <p className="text-sm text-white/70">
+                                    Consolidarnos como la primera opción de transporte en la región, construyendo relaciones a largo plazo a través de un servicio flexible, eficiente y de alto estándar operativo.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Puntualidad, Seguridad, Visibilidad */}
+                        <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3 gap-4">
+                            <div className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl p-4 md:p-5 hover:bg-white/10 transition-all duration-300 group hover:scale-105">
+                                <div className="flex items-center gap-3 mb-2">
+                                    <div className="p-2 rounded-lg bg-red-500/20 text-red-400 group-hover:bg-red-500/30 transition-colors">
+                                        <ClockIcon className="w-5 h-5" />
+                                    </div>
+                                    <p className="font-semibold text-white text-base">Puntualidad</p>
+                                </div>
+                                <p className="text-sm text-white/70">
+                                    Cumplimiento riguroso de los tiempos acordados.
+                                </p>
+                            </div>
+                            <div className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl p-4 md:p-5 hover:bg-white/10 transition-all duration-300 group hover:scale-105">
+                                <div className="flex items-center gap-3 mb-2">
+                                    <div className="p-2 rounded-lg bg-red-500/20 text-red-400 group-hover:bg-red-500/30 transition-colors">
+                                        <ShieldCheckIcon className="w-5 h-5" />
+                                    </div>
+                                    <p className="font-semibold text-white text-base">Seguridad</p>
+                                </div>
+                                <p className="text-sm text-white/70">
+                                    Operadores capacitados para un manejo cuidadoso de la mercancía.
+                                </p>
+                            </div>
+                            <div className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl p-4 md:p-5 hover:bg-white/10 transition-all duration-300 group hover:scale-105">
+                                <div className="flex items-center gap-3 mb-2">
+                                    <div className="p-2 rounded-lg bg-red-500/20 text-red-400 group-hover:bg-red-500/30 transition-colors">
+                                        <MapPinIcon className="w-5 h-5" />
+                                    </div>
+                                    <p className="font-semibold text-white text-base">Visibilidad</p>
+                                </div>
+                                <p className="text-sm text-white/70">
+                                    Monitorio 24/7 con seguimiento en tiempo real.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                {/* Key Guarantees - from PDF */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl p-4 md:p-5 hover:bg-white/10 transition-all duration-300 group hover:scale-105">
-                        <div className="flex items-center gap-3 mb-2">
-                            <div className="p-2 rounded-lg bg-red-500/20 text-red-400 group-hover:bg-red-500/30 transition-colors">
-                                <ClockIcon className="w-5 h-5" />
-                            </div>
-                            <p className="font-semibold text-white text-base">Puntualidad</p>
-                        </div>
-                        <p className="text-sm text-white/70">
-                            Cumplimiento riguroso de los tiempos acordados.
-                        </p>
-                    </div>
-                    <div className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl p-4 md:p-5 hover:bg-white/10 transition-all duration-300 group hover:scale-105">
-                        <div className="flex items-center gap-3 mb-2">
-                            <div className="p-2 rounded-lg bg-red-500/20 text-red-400 group-hover:bg-red-500/30 transition-colors">
-                                <ShieldCheckIcon className="w-5 h-5" />
-                            </div>
-                            <p className="font-semibold text-white text-base">Seguridad</p>
-                        </div>
-                        <p className="text-sm text-white/70">
-                            Manejo cuidadoso de la mercancía y pólizas de cobertura integrales.
-                        </p>
-                    </div>
-                    <div className="backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl p-4 md:p-5 hover:bg-white/10 transition-all duration-300 group hover:scale-105">
-                        <div className="flex items-center gap-3 mb-2">
-                            <div className="p-2 rounded-lg bg-red-500/20 text-red-400 group-hover:bg-red-500/30 transition-colors">
-                                <MapPinIcon className="w-5 h-5" />
-                            </div>
-                            <p className="font-semibold text-white text-base">Visibilidad</p>
-                        </div>
-                        <p className="text-sm text-white/70">
-                            Seguimiento en tiempo real desde la recepción hasta la entrega.
-                        </p>
-                    </div>
+                {/* Hero Image */}
+                <div className="relative h-[320px] sm:h-[420px] lg:h-full lg:min-h-[70vh] rounded-2xl lg:rounded-3xl overflow-hidden border border-white/10">
+                    <img
+                        src="/hero-image.jpg"
+                        alt="RZ Transportes"
+                        className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                 </div>
             </div>
         </div>
